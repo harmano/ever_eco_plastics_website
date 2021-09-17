@@ -1,6 +1,165 @@
 .icons-style:hover{
   color: #49e48a;
 }
+/*..................................... Image Box Carousel New .....................................*/
+:root {
+  --main-image-width: 500px;
+  --main-image-height: 400px;
+  --thumbnail-track-width: 90px;
+  --thumbnail-height: 79px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+.product-image-carousels {
+  display: flex;
+  justify-content: center;
+}
+
+/**
+  Thumbnails carousel
+*/
+.thumbnails-slider {
+  width: var(--thumbnail-track-width);
+  padding: 30px 0;
+  
+  margin-right: 5px;
+  /** Previous/next buttons */
+  /** Single thumbnail */
+
+}
+.thumbnails-slider button {
+  height: 30px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 30px;
+  color: rgba(0, 0, 0, 0.7);
+}
+.thumbnails-slider button:not([disabled]):hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+}
+.thumbnails-slider button:focus {
+  background-color: royalblue;
+}
+.thumbnails-slider button:focus .slick-prev-icon,
+.thumbnails-slider button:focus .slick-next-icon {
+  color: white !important;
+}
+.thumbnails-slider button.slick-prev {
+  top: 15px;
+  left: 0;
+}
+.thumbnails-slider button.slick-prev .slick-prev-icon {
+  display: inline-block;
+  transform: rotate(90deg);
+  color: black;
+}
+.thumbnails-slider button.slick-next {
+  bottom: -15px;
+  right: 0;
+  top: auto;
+}
+.thumbnails-slider button.slick-next .slick-next-icon {
+  display: inline-block;
+  transform: rotate(90deg);
+  color: black;
+}
+.thumbnails-slider .thumbnail-button {
+  display: block;
+  height: var(--thumbnail-height) !important;
+  cursor: pointer;
+  border: 0;
+  background: none;
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: opacity 0.1s linear;
+}
+.thumbnails-slider .thumbnail-button:focus img, .thumbnails-slider .thumbnail-button:hover img, .thumbnails-slider .thumbnail-button[aria-current=true] img {
+  opacity: 1;
+  filter: grayscale(0);
+}
+.thumbnails-slider .thumbnail-button:focus img {
+  outline: 3px dashed white;
+  outline-offset: -4px;
+}
+.thumbnails-slider .thumbnail-button img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: grayscale(0.6);
+  transition: all 0.1s linear;
+}
+
+/**
+  Main image carousel
+*/
+.main-image-slider {
+  position: relative;
+  width: var(--main-image-width);
+  height: var(--main-image-height);
+  position: relative;
+  margin-bottom: 1px;
+  /** Previous/next buttons */
+  /** Slides */
+}
+.main-image-slider button {
+  z-index: 1;
+}
+.main-image-slider button.slick-prev {
+  left: 10px;
+}
+.main-image-slider button.slick-prev .slick-prev-icon {
+  opacity: 1;
+}
+.main-image-slider button.slick-next {
+  right: 10px;
+}
+.main-image-slider button.slick-next .slick-next-icon {
+  opacity: 1;
+}
+.main-image-slider .slick-slide {
+  width: var(--main-image-width);
+}
+.main-image-slider .slick-slide .image-link {
+  height: var(--main-image-height);
+  overflow: hidden;
+  transition: outline 0.1s linear;
+}
+.main-image-slider .slick-slide .image-link:focus {
+  outline: 4px dashed white;
+  outline-offset: -7px;
+}
+.main-image-slider .slick-slide .image-link img {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/**
+  Demo only
+*/
+.note {
+  text-align: center;
+  font-size: 14px;
+  width: var(--main-image-width);
+  padding: 0 20px;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+.note a {
+  color: black;
+  font-weight: bold;
+}
 
 /*.................Footer......................*/
 .harman{
@@ -19,7 +178,8 @@
   background-color: black;
 
   border-radius: 45px 45px 0px 0px;
-  padding: 90px 13% 70px 13%;
+  padding: 90px 11% 70px 11%;
+  margin-top: -80px;
 }
 
 .button-up,
@@ -33,7 +193,7 @@
   transition: all 0.2s linear;
   float: right;
   margin-right: 3%;
-  margin-top: -30px;
+  margin-top: -100px;
 }
 
 .button-up:hover {
@@ -57,7 +217,12 @@
   top: 20px;
   transform: rotate(45deg);
 }
+.img-footer-logo{
+  width: 100px;
+  margin-top: -25px;
+  margin-left: -17px;
 
+}
 .img-footer{
   width: 50px;
   height: auto;
@@ -175,6 +340,16 @@
   max-width: 600px;
   margin:  auto;
 }
+/* Set the size of the div element that contains the map */
+#map {
+  height: 400px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+  margin-bottom: 50px;
+  border-radius: 15px;
+}
+/*.................reviews......................*/
 
 .testimonial blockquote {
   margin: 10px 10px 0;
@@ -229,8 +404,20 @@
   text-align: left;
   color: #fff;
 }
-/* Reveiws*/
-
+/*................. Reveiws........................*/
+.qoutes{
+  font-size: 70px;
+  margin-left: -20px;
+  color: #e6e6e6;
+  font-family: cursive;
+}
+.text-company-name{
+  font-size: 12px;
+}
+.text-company-role{
+  font-size: 10px;
+  margin-top: -8px;
+}
 .card-reviews{
   background-color: white;
   border-radius: 10px;
@@ -420,7 +607,7 @@ margin-top: -100px !important;
 .carousel-focus .carousel-focus-inner .carousel-focus-item:first-of-type {
   left: 0;
   transform: translate(-28%, 25%);
-  opacity: 0.25;
+  opacity: 0.75;
 }
 .carousel-focus .carousel-focus-inner .carousel-focus-item:nth-of-type(2) {
   border-color: #0069d9;
@@ -433,7 +620,7 @@ margin-top: -100px !important;
 .carousel-focus .carousel-focus-inner .carousel-focus-item:nth-of-type(3) {
   right: 0;
   transform: translate(28%, 25%);
-  opacity: 0.25;
+  opacity: 0.75;
 }
 .carousel-focus .carousel-focus-inner .carousel-focus-item:nth-child(n+4) {
   display: none;
@@ -474,16 +661,45 @@ margin-top: -100px !important;
     border-radius: 15px;
 }
 /*..................................... Buttons .....................................*/
+.btn-large{
+  background-color: white;
+  padding:10px 45px;
+  color: #3d434f;
+  border-radius: 28px;
+  font-size: 14px;
+  font-weight: 100;
+  letter-spacing: 1.5px;
+  border: none;
+  border: 2px solid white;
+  transition: .4s;
+  margin-left: -10px;
+  margin-top:5px;
+  z-index: 99;
+}
+.btn-large:hover{
+  background-color: #3d434f;
+  border: 2px solid #3d434f;
+  color: #e6e6e6;
+  transition: .4s;
+ 
+}
+.btn-large:active {
+    background-color: #49e48a;
+    border: 2px solid  #3d434f;
+    color: white;
+}
+
 .btn-normal{
     background-color: #3d434f;
-    padding:4px 35px;
+    padding:10px 35px;
     color: white;
     border-radius: 18px;
-    font-size: 11px;
+    font-size: 12px;
     letter-spacing: 1px;
     border: none;
     border: 2px solid #3d434f;
     transition: .4s;
+    font-weight: 100;
 }
 .btn-normal:hover{
     background-color: white;
@@ -850,22 +1066,45 @@ margin-top: -100px !important;
 
 .nav-link{
     text-transform: uppercase;
-    font-size: 11px;
-    padding-top: 25px;
+    font-size: 10px;
+    margin-top: 25px;
     color: white;
-    margin: 0px 1px;
+    margin: 0px 10px;
+    padding-top: 30px;
+
+
+  
   
 }
-.nav-link .nav_logo{
-    width: 25px;
-    height: 25px;
+.img-logo-small{
+  width: 70px;
+  height: 75px;
+  padding: ;
+    background-color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 0px 0px 5px 5px;
+    margin-top: -150px;
+    margin-left: -8px !important;
+}
 
+.nav-link .nav_logo{
+    width: 75px;
+    height: 75px;
+ 
     
 }
 
-.nav_logo{
+.nav_logo2{
     padding: ;
     background-color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    border-radius: 0px 0px 5px 5px;
 }
 
 .nav_flag{
@@ -983,7 +1222,7 @@ html {
 }
 
 .p-text-1{
-    line-height: 2;
+  line-height: 1.4rem;
 }
 .p-text-description{
     color: #49e48a;
@@ -1019,13 +1258,22 @@ html {
 body {
     background-color: white;
   }
-  
+  /*..................................... Cards .....................................*/
+
 .card-text{
-    font-size: 10px;
+    font-size: 14px;
     line-height: 2;
+    line-height: 1.4rem;
 }
 .card-title{
-    font-size: 14px;
+    font-size: 12px;
+    font-weight:700;
+}
+.info-icons{
+  font-size: 73px;
+  margin-left: 5px;
+    margin-bottom: 20px;
+    vertical-align: middle;
 }
 /*..................................... Cards .....................................*/
 .canadianownded{
@@ -1035,6 +1283,7 @@ body {
 .canadian-owned img{
     border: 3px solid rgb(255, 255, 255);
     border-radius: 50%;
+    margin-left: 5px;
 }
 .card img{
     width: 70px;
@@ -1126,7 +1375,13 @@ body {
     
     }
     .text-margin-minus-header{
-        margin-top: -15px;
+        margin-top: -55px !important;
+    }
+    .text-margin-minus-header-p{
+      margin-top: -40px;
+    }
+    .wavy-line3{
+      margin-top: -5px;
     }
     
   }
